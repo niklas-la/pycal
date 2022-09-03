@@ -20,10 +20,10 @@ class iCalender(object):
     def get_range(self, start, stop):
         ical = self.get_calendar()
         if start:
-            events = [
+            ical.events = [
                 event for event in ical.events if event.begin >= arrow.get(start)]
         if stop:
-            events = [event for event in ical.events if event.end <=
+            ical.events = [event for event in ical.events if event.end <=
                       arrow.get(stop)]
 
         return ical
